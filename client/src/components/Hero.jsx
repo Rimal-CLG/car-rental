@@ -63,7 +63,7 @@ const Hero = () => {
         initial={{ y: 100, opacity: 0 }}
        animate={{ y: 0, opacity: 1 }}
        transition={{ duration: 0.8, delay: 0.6 }}
-      src={assets.sp4} alt="car" className='max-h-65 tw-bg-opacity: 1;
+      src={assets.sp4} alt="car" className='max-h-800 max-w-800 tw-bg-opacity: 1;
 background-color: rgba(255, 255, 255, var(--tw-bg-opacity));'/>
     </motion.div>
   )

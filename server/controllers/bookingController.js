@@ -1,6 +1,6 @@
 import Booking from "../models/Booking.js";
 import Car from "../models/Car.js";
-import { stripe } from "../config/stripe.js";
+import { stripe } from "../configs/stripe.js";
 
 // Function to Check Availability of Car for a given Date
 const checkAvailability = async (car, pickupDate, returnDate) => {
@@ -87,8 +87,8 @@ export const createBooking = async (req, res) => {
           quantity: 1,
         },
       ],
-      success_url: `${process.env.FRONTEND_URL}/payment-success/${booking._id}`,
-      cancel_url: `${process.env.FRONTEND_URL}/payment-cancel/${booking._id}`,
+      success_url: `${process.env.FRONTEND_URL}my-bookings`,
+      cancel_url: `${process.env.FRONTEND_URL}my-bookings/${booking._id}`,
       metadata: {
         bookingId: booking._id.toString(),
       },
