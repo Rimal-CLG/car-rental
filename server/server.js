@@ -2,10 +2,10 @@ import express from "express";
 import "dotenv/config";
 import cors from "cors";
 import connectDB from "./configs/db.js";
-import userRouter from "./routes/userRoutes.js";
-import ownerRouter from "./routes/ownerRoutes.js";
-import bookingRouter from "./routes/bookingRoutes.js";
-import webhookRouter from "./routes/webhookRoutes.js";
+import userRouter from "./routes/user.routes.js";
+import ownerRouter from "./routes/owner.routes.js";
+import bookingRouter from "./routes/booking.routes.js";
+import webhookRouter from "./routes/webhook.routes.js";
 
 // Initialize Express App
 const app = express();
@@ -16,7 +16,7 @@ await connectDB();
 // Middleware
 app.use(cors());
 app.use(
-  "/api/webhooks",
+  "/api/webhook",
   express.raw({ type: "application/json" }),
   webhookRouter,
 );
