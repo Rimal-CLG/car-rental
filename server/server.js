@@ -16,7 +16,7 @@ await connectDB();
 // Middleware
 app.use(cors());
 app.use(
-  "/api/webhook",
+  "/api/webhooks",
   express.raw({ type: "application/json" }),
   webhookRouter,
 );
